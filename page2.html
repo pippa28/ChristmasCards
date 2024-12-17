@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>White Box</title>
+  <link rel="stylesheet" href="page2.css">
+</head>
+<body>
+  <!-- Snowflake container -->
+  <div id="snowflakes"></div>
+
+ <!-- Hand icon pointing upwards -->
+<div class="hand-icon">
+    <img src="pointer.png" alt="Pointing Hand" />
+  </div>
+
+  <!-- White Box with line down the middle -->
+  <div class="white-box">
+    <!-- Left side content (blank) -->
+    <div class="left-side">
+      <!-- Left side is intentionally left blank -->
+    </div>
+
+    <!-- Vertical line is automatically created using ::before -->
+
+    <!-- Right side content -->
+    <div class="right-side">
+      <h1>Merry Christmas!</h1>
+      <p>I hope you have a wonderful day and a happy new year!</p>
+      <p class="footer">Love, Pippa and Poppy xxx</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+  <script src="script.js"></script>
+  <script>
+    // Event listener for hand icon click
+    document.querySelector('.hand-icon').addEventListener('click', function () {
+      // Add the fade-out class to trigger the transition
+      document.body.classList.add('fade-out');
+
+      // After the transition (1 second), navigate to index.html
+      setTimeout(function () {
+        window.location.href = 'index.html';
+      }, 10); // The timeout matches the transition duration
+    });
+  </script>
+</body>
+</html>

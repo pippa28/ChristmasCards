@@ -1,0 +1,133 @@
+/* Apply gradient background */
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(to bottom, red, green);
+    overflow: hidden;
+    position: relative;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Center elements vertically */
+  }
+  
+  /* Snowflake container */
+  #snowflakes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+  
+  /* Hand icon styling (pointing upwards) */
+  .hand-icon {
+    position: absolute;
+    bottom: 20px;  /* Position the hand 20px from the bottom */
+    z-index: 2;
+    cursor: pointer;
+    font-size: 4em; /* Optional: Adjust the size of the hand */
+    animation: bob 1.5s ease-in-out infinite;  /* Apply the bob animation */
+  }
+  
+  /* Animation for the bob effect */
+  @keyframes bob {
+    0% {
+      transform: translateY(0); /* Initial position */
+    }
+    50% {
+      transform: translateY(-20px); /* Move up */
+    }
+    100% {
+      transform: translateY(0); /* Back to original position */
+    }
+  }
+  
+  /* White Box styling */
+  .white-box {
+    position: relative;
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1), 0px 0px 30px rgba(0, 0, 0, 0.15);
+    z-index: 1;
+    text-align: center;
+    width: 1000px; /* Make the box even wider (increased from 800px to 1000px) */
+    height: 600px; /* Same height as the red card */
+    display: flex;
+    flex-direction: row; /* Use row layout to create space for the line */
+    justify-content: center;
+    align-items: center;
+    gap: 40px; /* Space between the two sections */
+  }
+  
+  /* Create a line down the middle with paper crease effect */
+  .white-box::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    height: 100%;
+    width: 6px; /* Line width */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.6), rgba(0, 0, 0, 0.2)); /* Gradient for crease effect */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2), 0 -5px 10px rgba(255, 255, 255, 0.5); /* Subtle shadows for depth */
+    transform: translateX(-50%); /* Center the line */
+    border-radius: 2px; /* Slightly rounded corners for a softer crease */
+  }
+  
+  /* Content on the left side of the white box */
+  .left-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 45%; /* Take up 45% of the width */
+    /* Left side is intentionally left blank */
+  }
+  
+  /* Content on the right side of the white box */
+  .right-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 45%; /* Take up 45% of the width */
+  }
+  
+  /* Right side text and footer styling */
+  .right-side h1 {
+    font-size: 2.5em;
+    color: black;
+    margin: 20px 0;
+  }
+  
+  .right-side p {
+    font-size: 1.2em;
+    color: black;
+    margin: 10px 0;
+  }
+  
+  .footer {
+    font-size: 1em;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  
+  /* Snowflake animations */
+  .snowflake {
+    position: absolute;
+    top: -10px;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: fall linear infinite;
+  }
+  
+  @keyframes fall {
+    100% {
+      transform: translateY(100vh);
+    }
+  }
+  
