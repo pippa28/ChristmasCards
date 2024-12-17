@@ -2,7 +2,7 @@
 body {
     margin: 0;
     height: 100vh;
-    background: linear-gradient(to bottom, red, green);
+    background-image: url('background.png');
     overflow: hidden;
     position: relative;
     font-family: Arial, sans-serif;
@@ -48,7 +48,7 @@ body {
   /* Card styling */
   .card {
     position: relative;
-    background-color: red;
+    background-color: darkred;
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1), 0px 0px 30px rgba(0, 0, 0, 0.15);
